@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const PARTICLE_COUNT = 2000;
+const PARTICLE_COUNT = 6000;
 
 function generateParticleData() {
   const positions = new Float32Array(PARTICLE_COUNT * 3);
@@ -74,10 +74,10 @@ export default function HeroParticles() {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.03}
+        size={0.045}
         color="#22d3ee"
         transparent
-        opacity={0.9}
+        opacity={1}
         sizeAttenuation
       />
     </points>

@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { motion } from 'framer-motion';
+import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import HeroParticles from './HeroParticles';
 
 const taglineFull =
@@ -25,6 +26,13 @@ export default function Hero() {
       <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <HeroParticles />
+        <EffectComposer>
+          <Bloom
+            intensity={1.5}
+            luminanceThreshold={0.1}
+            luminanceSmoothing={0.9}
+          />
+        </EffectComposer>
       </Canvas>
 
       <div className="absolute inset-0 flex flex-col items-center justify-end pb-20 pointer-events-none">
