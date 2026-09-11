@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import BootSequence from '@/components/scenes/BootSequence';
+import Hero from '@/components/scenes/Hero';
 
 export default function Home() {
   const [booted, setBooted] = useState(false);
@@ -9,11 +10,11 @@ export default function Home() {
     <>
       {!booted && <BootSequence onComplete={() => setBooted(true)} />}
       <main
-        className={`min-h-screen bg-black text-white transition-opacity duration-700 ${
+        className={`transition-opacity duration-700 ${
           booted ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <h1 className="text-3xl p-10">Hero section coming next...</h1>
+        <Hero />
       </main>
     </>
   );
